@@ -71,7 +71,7 @@
       <span>Data Peminjaman</span>
     </a>
   </li>
-  <li class="nav-item <?php if (uri_string() == 'buku/kategori' || strpos(uri_string(), 'buku/ubahkategori') !== false) echo 'active'; ?>">
+  <li class="nav-item <?php if (uri_string() == 'pinjam/daftarBooking' || strpos(uri_string(), 'buku/ubahkategori') !== false) echo 'active'; ?>">
     <a class="nav-link pb-0" href="<?= base_url('pinjam/daftarBooking'); ?>">
       <i class="fa fa-fw fa-list"></i>
       <span>Data Booking</span>
