@@ -4,7 +4,7 @@ class Home extends CI_Controller
   public function __construct()
   {
     parent::__construct();
-    $this->load->model(['ModelBuku', 'ModelUser']);
+    $this->load->model(['ModelBuku', 'ModelUser', 'ModelBooking']);
   }
 
   public function index()
@@ -20,13 +20,13 @@ class Home extends CI_Controller
       $data['user'] = $user['nama'];
       $this->load->view('templates/templates-user/header', $data);
       $this->load->view('buku/daftarbuku', $data);
-      //$this->load->view('templates/templates-user/modal', $data);
+      $this->load->view('templates/templates-user/modal', $data);
       $this->load->view('templates/templates-user/footer', $data);
     } else {
       $data['user'] = 'Pengunjung';
       $this->load->view('templates/templates-user/header', $data);
       $this->load->view('buku/daftarbuku', $data);
-      //$this->load->view('templates/templates-user/modal', $data);
+      $this->load->view('templates/templates-user/modal', $data);
       $this->load->view('templates/templates-user/footer', $data);
     }
   }
@@ -52,7 +52,7 @@ class Home extends CI_Controller
     }
     $this->load->view('templates/templates-user/header', $data);
     $this->load->view('buku/detail-buku', $data);
-    //$this->load->view('templates/templates-user/modal');
+    $this->load->view('templates/templates-user/modal');
     $this->load->view('templates/templates-user/footer');
   }
 }
