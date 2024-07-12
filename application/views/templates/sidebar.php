@@ -65,13 +65,13 @@
   <!-- Nav Item - Dashboard -->
   <li class="nav-item active">
     <!-- Nav Item - Dashboard -->
-  <li class="nav-item <?php if (uri_string() == 'buku/kategori' || strpos(uri_string(), 'buku/ubahkategori') !== false) echo 'active'; ?>">
-    <a class="nav-link pb-0" href="<?= base_url('pinjam'); ?>">
+  <li class="nav-item <?php if (uri_string() == 'pinjam/index' || strpos(uri_string(), 'pinjam/index') !== false) echo 'active'; ?>">
+    <a class="nav-link pb-0" href="<?= base_url('pinjam/index'); ?>">
       <i class="fa fa-fw fa-shopping-cart"></i>
       <span>Data Peminjaman</span>
     </a>
   </li>
-  <li class="nav-item <?php if (uri_string() == 'pinjam/daftarBooking' || strpos(uri_string(), 'buku/ubahkategori') !== false) echo 'active'; ?>">
+  <li class="nav-item <?php if (uri_string() == 'pinjam/daftarBooking' || strpos(uri_string(), 'pinjam/bookingDetail') !== false) echo 'active'; ?>">
     <a class="nav-link pb-0" href="<?= base_url('pinjam/daftarBooking'); ?>">
       <i class="fa fa-fw fa-list"></i>
       <span>Data Booking</span>
