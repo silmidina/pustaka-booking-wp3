@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Pustaka-Booking | <?= $judul; ?></title>
   <link rel="icon" type="image/png" href="<?= base_url('assets/img/logo/'); ?>logo-pb.png">
-  <link rel="stylesheet" href="<?= base_url('assets/'); ?>user/css/bootstrap.css">
+  <link rel="stylesheet" href="<?= base_url(); ?>assets/user/css/bootstrap.css">
   <link href="<?= base_url('assets/'); ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="<?= base_url('assets/'); ?>datatable/datatables.css" rel="stylesheet" type="text/css">
 </head>
@@ -25,6 +25,7 @@
           <?php
           if (!empty($this->session->userdata('email'))) { ?>
             <a class="nav-item nav-link" href="<?= base_url('booking'); ?>">Booking Buku <b><?= $this->ModelBooking->getDataWhere('temp', ['email_user' => $this->session->userdata('email')])->num_rows(); ?></b></a>
+            <a class="nav-item nav-link" onclick="information('Waktu Pengambilan Buku 1x24 jam dari Booking!!!')" href="<?= base_url() . 'booking/exportToPdf/' . $this->session->userdata('id_user'); ?>">Cetak Bukti Booking</a>
             <a class="nav-item nav-link" href="<?= base_url('member/myProfil'); ?>">Profil Saya</a>
             <a class="nav-item nav-link" href="<?= base_url('member/logout'); ?>"><i class="fas fw fa-login"></i> Log out</a>
           <?php } else { ?>

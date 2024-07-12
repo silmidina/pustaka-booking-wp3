@@ -37,17 +37,17 @@
     <!-- Nav Item - Dashboard -->
   <li class="nav-item <?php if (uri_string() == 'buku/kategori' || strpos(uri_string(), 'buku/ubahkategori') !== false) echo 'active'; ?>">
     <a class="nav-link pb-0" href="<?= base_url('buku/kategori'); ?>">
-        <i class="fa fa-fw fa-list"></i>
-        <span>Kategori Buku</span>
+      <i class="fa fa-fw fa-list"></i>
+      <span>Kategori Buku</span>
     </a>
-</li>
+  </li>
 
   <li class="nav-item <?php if (uri_string() == 'buku' || strpos(uri_string(), 'buku/ubahBuku') !== false) echo 'active'; ?>">
     <a class="nav-link pb-0" href="<?= base_url('buku'); ?>">
       <i class="fa fa-fw fa-book"></i>
       <span>Data Buku</span></a>
   </li>
-   <li class="nav-item <?php if (uri_string() == 'user/anggota' || strpos(uri_string(), 'user/ubahuser') !== false) echo 'active'; ?>">
+  <li class="nav-item <?php if (uri_string() == 'user/anggota' || strpos(uri_string(), 'user/ubahuser') !== false) echo 'active'; ?>">
     <a class="nav-link pb-0" href="<?= base_url('user/anggota'); ?>">
       <i class="fas fa-fw fa-users"></i>
       <span>Data Anggota</span></a>
@@ -57,6 +57,26 @@
   <!-- Divider -->
   <hr class="sidebar-divider mt-3">
 
+  <!-- Heading -->
+  <div class="sidebar-heading">
+    Transaksi
+  </div>
+
+  <!-- Nav Item - Dashboard -->
+  <li class="nav-item active">
+    <!-- Nav Item - Dashboard -->
+  <li class="nav-item <?php if (uri_string() == 'buku/kategori' || strpos(uri_string(), 'buku/ubahkategori') !== false) echo 'active'; ?>">
+    <a class="nav-link pb-0" href="<?= base_url('pinjam'); ?>">
+      <i class="fa fa-fw fa-shopping-cart"></i>
+      <span>Data Peminjaman</span>
+    </a>
+  </li>
+  <li class="nav-item <?php if (uri_string() == 'buku/kategori' || strpos(uri_string(), 'buku/ubahkategori') !== false) echo 'active'; ?>">
+    <a class="nav-link pb-0" href="<?= base_url('pinjam/daftarBooking'); ?>">
+      <i class="fa fa-fw fa-list"></i>
+      <span>Data Booking</span>
+    </a>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="<?= base_url('autentifikasi/logout'); ?>">
       <i class="fas fa-fw fa-sign-out-alt"></i>
