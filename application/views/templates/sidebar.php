@@ -77,13 +77,46 @@
       <span>Data Booking</span>
     </a>
   </li>
+
+  <!-- Divider -->
+  <hr class="sidebar-divider mt-3">
+
+  <!-- Heading -->
+  <div class="sidebar-heading">
+    Laporan
+  </div>
+
+  <!-- Nav Item - Dashboard -->
+  <li class="nav-item active">
+    <!-- Nav Item - Dashboard -->
+  <li class="nav-item <?php if (uri_string() == 'laporan/laporan_buku' || strpos(uri_string(), 'laporan/laporan_buku') !== false) echo 'active'; ?>">
+    <a class="nav-link pb-0" href="<?= base_url('laporan/laporan_buku'); ?>">
+      <i class="fa fa-fw fa-address-book"></i>
+      <span>Laporan Data Buku</span>
+    </a>
+  </li>
+  <li class="nav-item <?php if (uri_string() == 'laporan/laporan_anggota' || strpos(uri_string(), 'laporan/laporan_anggota') !== false) echo 'active'; ?>">
+    <a class="nav-link pb-0" href="<?= base_url('laporan/laporan_anggota'); ?>">
+      <i class="fa fa-fw fa-address-book"></i>
+      <span>Laporan Data Anggota</span>
+    </a>
+  </li>
+  <li class="nav-item <?php if (uri_string() == 'laporan/laporan_pinjam' || strpos(uri_string(), 'laporan/laporan_pinjam') !== false) echo 'active'; ?>">
+    <a class="nav-link pb-0" href="<?= base_url('laporan/laporan_pinjam'); ?>">
+      <i class="fa fa-fw fa-address-book"></i>
+      <span>Laporan Peminjaman</span>
+    </a>
+  </li>
+
+
+  <!-- Divider -->
+  <hr class="sidebar-divider mt-3">
+
   <li class="nav-item">
     <a class="nav-link" href="<?= base_url('autentifikasi/logout'); ?>">
       <i class="fas fa-fw fa-sign-out-alt"></i>
       <span>Logout</span></a>
   </li>
-  <!-- Divider -->
-  <hr class="sidebar-divider mt-3">
 
   <!-- Sidebar Toggler (Sidebar) -->
   <div class="text-center d-none d-md-inline">
