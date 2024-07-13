@@ -27,4 +27,21 @@ class Laporan extends CI_Controller
     $data['kategori'] = $this->ModelBuku->getKategori()->result_array();
     $this->load->view('buku/laporan_print_buku', $data);
   }
+
+  public function laporan_buku_pdf()
+  {
+    $data['buku'] = $this->ModelBuku->getBuku()->result_array();
+    $html = $this->load->view('buku/laporan_pdf_buku', $data, true);
+    $this->load->library('pdf');
+    $this->pdf->create($html, "laporan_data_buku.pdf", 'A4', 'landscape');
+  }
+
+  public function export_excel()
+  {
+    $data = array(
+      'title' => 'Laporan Buku',
+      'buku' => $this->ModelBuku->getBuku()->result_array()
+    );
+    $this->load->view('buku/export_excel_buku', $data);
+  }
 }
