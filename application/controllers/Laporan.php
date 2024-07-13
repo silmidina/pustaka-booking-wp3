@@ -44,4 +44,39 @@ class Laporan extends CI_Controller
     );
     $this->load->view('buku/export_excel_buku', $data);
   }
+
+  public function laporan_pinjam()
+  {
+    $data['judul'] = 'Laporan Data Peminjaman';
+    $data['user'] = $this->ModelUser->cekData(['email' => $this->session->userdata('email')])->row_array();
+    $data['laporan'] = $this->db->query("select * from pinjam p,detail_pinjam d, buku b,user u where d.id_buku=b.id and p.id_user=u.id and p.no_pinjam=d.no_pinjam")->result_array();
+    $this->load->view('templates/header', $data);
+    $this->load->view('templates/sidebar');
+    $this->load->view('templates/topbar', $data);
+    $this->load->view('pinjam/laporan-pinjam', $data);
+    $this->load->view('templates/footer');
+  }
+
+  public function cetak_laporan_pinjam()
+  {
+    $data['laporan'] = $this->db->query("select * from pinjam p,detail_pinjam d,buku b,user u where d.id_buku=b.id and p.id_user=u.id and p.no_pinjam=d.no_pinjam")->result_array();
+    $this->load->view('pinjam/laporan-print-pinjam', $data);
+  }
+
+  public function laporan_pinjam_pdf()
+  {
+    $data['laporan'] = $this->db->query("select * from pinjam p,detail_pinjam d,buku b,user u where d.id_buku=b.id and p.id_user=u.id and p.no_pinjam=d.no_pinjam")->result_array();
+    $html = $this->load->view('pinjam/laporan-pdf-pinjam', $data, true);
+    $this->load->library('pdf');
+    $this->pdf->create($html, "laporan_data_pinjam.pdf", 'A4', 'landscape');
+  }
+
+  public function export_excel_pinjam()
+  {
+    $data = array(
+      'title' => 'Laporan Data Peminjaman Buku',
+      'laporan' => $this->db->query("select * from pinjam p,detail_pinjam d, buku b,user u where d.id_buku=b.id and p.id_user=u.id and p.no_pinjam=d.no_pinjam")->result_array()
+    );
+    $this->load->view('pinjam/export-excel-pinjam', $data);
+  }
 }
